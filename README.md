@@ -3,3 +3,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ec758f40e83a2e1edd15/maintainability)](https://codeclimate.com/github/BaronDeFitenbah/frontend-project-44/maintainability)
 
 [![Brain even game]](https://asciinema.org/a/558120)
+[![Brain calc game]](https://asciinema.org/a/558323)
