@@ -23,6 +23,7 @@ const progression = () => {
 
   let i = 0;
   let checking = true;
+
   // cycle for 3 attempts
   while (i < 3 && checking === true) {
     const currentArray = workOnProgression();
