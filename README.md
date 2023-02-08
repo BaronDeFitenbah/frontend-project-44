@@ -5,3 +5,4 @@
 [![Brain even game]](https://asciinema.org/a/558120)
 [![Brain calc game]](https://asciinema.org/a/558323)
 [[!Brain gcd game]](https://asciinema.org/a/558342)
+[[! Brain progression game]](https://asciinema.org/a/558345)
