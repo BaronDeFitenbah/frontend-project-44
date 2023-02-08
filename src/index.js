@@ -16,8 +16,6 @@ export const check = (gamersName, ans, correctA) => {
   return false;
 };
 
-export const congrats = (i, gamersName) => {
-  if (i === 3) {
-    console.log(`Congratulations, ${gamersName}!`);
-  }
+export const congrats = (checking, gamersName) => {
+  if (checking === true) console.log(`Congratulations, ${gamersName}!`);
 };

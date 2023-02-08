@@ -32,7 +32,7 @@ const prime = () => {
     i += 1;
   }
   // if gamer gave 3 correct answer, he wins
-  congrats(i, gamerName);
+  congrats(checking, gamerName);
 };
 
 export default prime;

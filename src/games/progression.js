@@ -25,7 +25,7 @@ const progression = () => {
   let checking = true;
 
   // cycle for 3 attempts
-  while (i < 3 && checking === true) {
+  while ((i < 3) && (checking === true)) {
     const currentArray = workOnProgression();
     const serialNumber = Math.floor(Math.random() * currentArray.length);
     const correctAnswer = String(currentArray[serialNumber]);
@@ -38,8 +38,7 @@ const progression = () => {
     checking = check(gamerName, answer, correctAnswer);
     i += 1;
   }
-  // if gamer gave 3 correct answer, he wins
-  congrats(i, gamerName);
+  congrats(checking, gamerName);
 };
 
 export default progression;

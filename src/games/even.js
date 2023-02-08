@@ -29,7 +29,7 @@ const evenNumber = () => {
     i += 1;
   }
 
-  congrats(i, gamerName);
+  congrats(checking, gamerName);
 };
 
 export default evenNumber;
