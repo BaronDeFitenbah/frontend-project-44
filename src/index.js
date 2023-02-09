@@ -1,18 +1,26 @@
 import readlineSync from 'readline-sync';
 
-export const greeting = () => {
+export const getUsername = () => {
   console.log('Welcome to the Brain Games!');
   const gamerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${gamerName}!`);
   return gamerName;
 };
 
-export const check = (gamersName, ans, correctA) => {
-  if (ans === correctA) {
+export const doQuestionGetAnswer = (question) => {
+  console.log(`Question: ${question}`);
+  const gamerAnswer = readlineSync.question('Your answer: ');
+  return gamerAnswer;
+};
+
+export const getRandomNumber = (range) => Math.floor(Math.random() * range);
+
+export const isTrue = (gamerName, gamerAnswer, correctAnswer) => {
+  if (gamerAnswer === correctAnswer) {
     console.log('Correct!');
     return true;
   }
-  console.log(`'${ans}' is wrong answer ;(. Correct answer was '${correctA}'.\nLet's try again, ${gamersName}!`);
+  console.log(`'${gamerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${gamerName}!`);
   return false;
 };
 

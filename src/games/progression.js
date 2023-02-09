@@ -1,44 +1,48 @@
-/* eslint-disable import/no-unresolved */
-import readlineSync from 'readline-sync';
-import { greeting, congrats, check } from '../index.js';
+import {
+  getUsername,
+  doQuestionGetAnswer,
+  getRandomNumber,
+  isTrue,
+  congrats,
+} from '../index.js';
 
-const workOnProgression = () => {
-  let start = Math.floor(Math.random() * 15);
-  const arrStep = 1 + Math.floor(Math.random() * 6);
-  const arrLength = 5 + Math.floor(Math.random() * 10);
-  const arrOfProgression = [];
-
-  for (let j = 0; j < arrLength; j += 1) {
-    arrOfProgression[j] = start;
-    start += arrStep;
+const getRandomProgressionInArray = () => {
+  // first number of progression starts in range from 1 to 15
+  let start = 1 + getRandomNumber(15);
+  // min step between numbers is 2 and max value is 7
+  const progressionStep = 2 + getRandomNumber(6);
+  // min amount of numbers in progression is 5 and max is 10
+  const arrayLength = 5 + getRandomNumber(10);
+  const arrayOfProgression = [];
+  // fill the array
+  for (let index = 0; index < arrayLength; index += 1) {
+    arrayOfProgression[index] = start;
+    start += progressionStep;
   }
-  return arrOfProgression;
+  return arrayOfProgression;
 };
 
 const progression = () => {
-  const gamerName = greeting();
-
+  const gamerName = getUsername();
   // start of the game
   console.log('What number is missing in the progression?');
-
-  let i = 0;
-  let checking = true;
-
+  let attemptCount = 0;
+  let isResultTrue = true;
   // cycle for 3 attempts
-  while ((i < 3) && (checking === true)) {
-    const currentArray = workOnProgression();
-    const serialNumber = Math.floor(Math.random() * currentArray.length);
-    const correctAnswer = String(currentArray[serialNumber]);
-    currentArray[serialNumber] = '...';
-
-    // question
-    console.log(`Question: ${currentArray.join(' ')}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    checking = check(gamerName, answer, correctAnswer);
-    i += 1;
+  while (attemptCount < 3 && isResultTrue === true) {
+    const currentProgression = getRandomProgressionInArray();
+    const serialNumberOfHiddenNumber = getRandomNumber(currentProgression.length);
+    const correctAnswer = String(currentProgression[serialNumberOfHiddenNumber]);
+    currentProgression[serialNumberOfHiddenNumber] = '...';
+    // ask the gamer
+    const question = currentProgression.join(' ');
+    const gamerAnswer = doQuestionGetAnswer(question);
+    // and check if he is right
+    isResultTrue = isTrue(gamerName, gamerAnswer, correctAnswer);
+    attemptCount += 1;
   }
-  congrats(checking, gamerName);
+  // congratulate if he wins after 3 attempts
+  congrats(isResultTrue, gamerName);
 };
 
 export default progression;

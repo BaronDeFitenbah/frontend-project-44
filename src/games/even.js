@@ -1,35 +1,32 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import readlineSync from 'readline-sync';
-import { check, congrats, greeting } from '../index.js';
+import {
+  getUsername,
+  doQuestionGetAnswer,
+  getRandomNumber,
+  isTrue,
+  congrats,
+} from '../index.js';
 
-const evenNumber = () => {
-  // greeting
-  const gamerName = greeting();
-
-  // start of the game
+const isEvenNumber = () => {
+  // greeting and remember Username
+  const gamerName = getUsername();
+  // start of the game and rules
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-  let i = 0;
-  let checking = true;
+  let attemptCount = 0;
+  let isResultTrue = true;
   // cycle for 3 attempts
-  while (i < 3 && checking === true) {
+  while (attemptCount < 3 && isResultTrue === true) {
     // randomizing a number
-    const x = Math.floor(Math.random() * 100);
+    const randomizedNumber = getRandomNumber(100);
     // and remembering correct answer
-    let correctAnswer = '';
-    console.log(`Question: ${x}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (x % 2 === 0) {
-      correctAnswer = 'yes';
-    } else {
-      correctAnswer = 'no';
-    }
-
-    checking = check(gamerName, answer, correctAnswer);
-    i += 1;
+    const correctAnswer = randomizedNumber % 2 ? 'no' : 'yes';
+    // ask the gamer
+    const gamerAnswer = doQuestionGetAnswer(randomizedNumber);
+    // and check if he is right
+    isResultTrue = isTrue(gamerName, gamerAnswer, correctAnswer);
+    attemptCount += 1;
   }
-
-  congrats(checking, gamerName);
+  // congratulate if he wins after 3 attempts
+  congrats(isResultTrue, gamerName);
 };
 
-export default evenNumber;
+export default isEvenNumber;

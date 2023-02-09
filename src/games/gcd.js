@@ -1,8 +1,14 @@
-/* eslint-disable import/no-unresolved */
-import readlineSync from 'readline-sync';
-import { greeting, congrats, check } from '../index.js';
+import {
+  getUsername,
+  doQuestionGetAnswer,
+  getRandomNumber,
+  isTrue,
+  congrats,
+} from '../index.js';
 
-const findGcd = (a, b) => {
+const findGcd = (firstNumber, secondNumber) => {
+  let a = firstNumber;
+  let b = secondNumber;
   while (a !== b) {
     if (a > b) {
       a -= b;
@@ -14,29 +20,26 @@ const findGcd = (a, b) => {
 };
 
 const gcd = () => {
-  const gamerName = greeting();
-
+  const gamerName = getUsername();
   // start of the game
   console.log('Find the greatest common divisor of given numbers.');
-
-  let i = 0;
-  let checking = true;
+  let attemptCount = 0;
+  let isResultTrue = true;
   // cycle for 3 attempts
-  while (i < 3 && checking === true) {
-    // randomizing
-    const x = Math.floor(Math.random() * 100);
-    const y = Math.floor(Math.random() * 100);
-    const correctAnswer = String(findGcd(x, y));
-
-    // question
-    console.log(`Question: ${x} ${y}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    checking = check(gamerName, answer, correctAnswer);
-    i += 1;
+  while (attemptCount < 3 && isResultTrue === true) {
+    // randomizing numbers
+    const randomizedNumber1 = 1 + getRandomNumber(100);
+    const randomizedNumber2 = 1 + getRandomNumber(100);
+    const correctAnswer = String(findGcd(randomizedNumber1, randomizedNumber2));
+    // ask the gamer
+    const question = `${randomizedNumber1} ${randomizedNumber2}`;
+    const gamerAnswer = doQuestionGetAnswer(question);
+    // and check if he is right
+    isResultTrue = isTrue(gamerName, gamerAnswer, correctAnswer);
+    attemptCount += 1;
   }
-  // if gamer gave 3 correct answer, he wins
-  congrats(checking, gamerName);
+  // congratulate if he wins after 3 attempts
+  congrats(isResultTrue, gamerName);
 };
 
 export default gcd;
