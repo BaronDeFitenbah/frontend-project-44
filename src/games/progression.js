@@ -33,7 +33,7 @@ const progression = () => {
     const currentProgression = getRandomProgressionInArray();
     const serialNumberOfHiddenNumber = getRandomNumber(currentProgression.length);
     const correctAnswer = String(currentProgression[serialNumberOfHiddenNumber]);
-    currentProgression[serialNumberOfHiddenNumber] = '...';
+    currentProgression[serialNumberOfHiddenNumber] = '..';
     // ask the gamer
     const question = currentProgression.join(' ');
     const gamerAnswer = doQuestionGetAnswer(question);
