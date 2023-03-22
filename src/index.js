@@ -1,29 +1,25 @@
 import readlineSync from 'readline-sync';
+// import getRandomInRange from 'utils.js';
 
-export const getUsername = () => {
+
+const roundsCount = 3;
+
+export const runEngine = (rules, generateRound) => {
+  
+  
   console.log('Welcome to the Brain Games!');
   const gamerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${gamerName}!`);
-  return gamerName;
-};
-
-export const doQuestionGetAnswer = (question) => {
-  console.log(`Question: ${question}`);
-  const gamerAnswer = readlineSync.question('Your answer: ');
-  return gamerAnswer;
-};
-
-export const getRandomNumber = (range) => Math.floor(Math.random() * range);
-
-export const isTrue = (gamerName, gamerAnswer, correctAnswer) => {
-  if (gamerAnswer === correctAnswer) {
-    console.log('Correct!');
-    return true;
+  
+  console.log(rules);
+  
+  for (let i = 0; i < roundsCount; i ++) {
+    //generateRound
+    conts [question, answer] = generateRound();
+    
   }
-  console.log(`'${gamerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${gamerName}!`);
-  return false;
+  
+  
 };
 
-export const congrats = (checking, gamersName) => {
-  if (checking === true) console.log(`Congratulations, ${gamersName}!`);
-};
+
