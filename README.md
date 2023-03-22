@@ -5,29 +5,20 @@
 
 ## How it works:
 ### There is 5 console games:
-#### 1. Brain Even game
+#### 1. [Brain Even game](https://asciinema.org/a/558120)
 type "brain-even" to run
-[Brain even game](https://asciinema.org/a/558120)
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="asciinema-player.css" />
-</head>
-<body>
-  <div id="player"></div>
-  <script src="asciinema-player.min.js"></script>
-  <script>
-    AsciinemaPlayer.create(
-      '558378.cast',
-      document.getElementById('player'),
-      { cols: 120, rows: 30 }
-    );
-  </script>
-</body>
-</html>
-[Brain calc game](https://asciinema.org/a/558367)
-[Brain gcd game](https://asciinema.org/a/558368)
-[Brain progression game](https://asciinema.org/a/558377)
-[Brain prime game](https://asciinema.org/a/558378)
+
+#### 2. [Brain Calc game](https://asciinema.org/a/558367)
+type "brain-calc" to run
+
+#### 3. [Brain GCD game](https://asciinema.org/a/558368)
+type "brain-gcd" to run
+
+#### 4. [Brain Progression game](https://asciinema.org/a/558377)
+type "brain-progression" to run
+
+#### 2. [Brain Prime game](https://asciinema.org/a/558378)
+type "brain-prime" to run
 
 ### How to install:
 
