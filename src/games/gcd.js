@@ -3,20 +3,20 @@ import runEngine from '../index.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
 
-const generateRound = () => {
-  const findGcd = (firstNumber, secondNumber) => {
-    let a = firstNumber;
-    let b = secondNumber;
-    while (a !== b) {
-      if (a > b) {
-        a -= b;
-      } else {
-        b -= a;
-      }
+const findGcd = (firstNumber, secondNumber) => {
+  let a = firstNumber;
+  let b = secondNumber;
+  while (a !== b) {
+    if (a > b) {
+      a -= b;
+    } else {
+      b -= a;
     }
-    return a;
-  };
+  }
+  return a;
+};
 
+const generateRound = () => {
   const randomizedNumber1 = getRandomInRange(1, 100);
   const randomizedNumber2 = getRandomInRange(1, 100);
 
