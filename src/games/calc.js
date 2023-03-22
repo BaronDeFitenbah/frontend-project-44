@@ -1,58 +1,33 @@
-import {
-  getUsername,
-  doQuestionGetAnswer,
-  getRandomNumber,
-  isTrue,
-  congrats,
-} from '../index.js';
+import getRandomInRange from '../utils.js';
+import runEngine from '../index.js';
 
-const getOperation = () => {
+const rules = 'What is the result of the expression?';
+
+const generateRound = () => {
   const arrayOfOperations = ['*', '+', '-'];
-  const operation = arrayOfOperations[getRandomNumber(3)];
-  return operation;
-};
 
-const getCorrectAnswer = (firstNumber, secondNumber, operation) => {
+  const operator = arrayOfOperations[getRandomInRange(0, 2)];
+  const randomNum1 = getRandomInRange(1, 30);
+  const randomNum2 = getRandomInRange(1, 30);
+
+  const question = `${randomNum1} ${operator} ${randomNum2}`;
+
   let answer = '';
-  switch (operation) {
+  switch (operator) {
     case '*':
-      answer = String(firstNumber * secondNumber);
+      answer = String(randomNum1 * randomNum2);
       break;
     case '+':
-      answer = String(firstNumber + secondNumber);
+      answer = String(randomNum1 + randomNum2);
       break;
     case '-':
-      answer = String(firstNumber - secondNumber);
+      answer = String(randomNum1 - randomNum2);
       break;
     default:
-      answer = 0;
+      answer = '0';
   }
-  return answer;
+
+  return [question, answer];
 };
 
-const calculator = () => {
-  const gamerName = getUsername();
-  // start of the game
-  console.log('What is the result of the expression?');
-  let attemptCount = 0;
-  let isResultTrue = true;
-  // cycle for 3 attempts
-  while (attemptCount < 3 && isResultTrue === true) {
-    // randomizing
-    const randomizedNumber1 = getRandomNumber(30);
-    const randomizedNumber2 = getRandomNumber(30);
-    const operation = getOperation(); // 'getOperation()' must be used once
-    // and remembering correct answer
-    const correctAnswer = getCorrectAnswer(randomizedNumber1, randomizedNumber2, operation);
-    // ask the gamer
-    const question = `${randomizedNumber1} ${operation} ${randomizedNumber2}`;
-    const gamerAnswer = doQuestionGetAnswer(question);
-    // and check if he is right
-    isResultTrue = isTrue(gamerName, gamerAnswer, correctAnswer);
-    attemptCount += 1;
-  }
-  // congratulate if he wins after 3 attempts
-  congrats(isResultTrue, gamerName);
-};
-
-export default calculator;
+export default () => runEngine(rules, generateRound);
