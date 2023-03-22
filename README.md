@@ -4,10 +4,10 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ec758f40e83a2e1edd15/maintainability)](https://codeclimate.com/github/BaronDeFitenbah/frontend-project-44/maintainability)
 
 В проекте реализованы 5 игр: проверка на четность, калькулятор, НОД, аримфметическая прогрессия, простое ли число. 
-В каждой игре у есть три раунда. Игрок побеждает, если правильно отвечает во всех 3-х раундах.
+В каждой игре есть три раунда. Игрок побеждает, если правильно отвечает во всех 3-х раундах.
 
-### Как установить:
-1. Для установки понадобятся [Git](https://git-scm.com/downloads), [Node.js](https://nodejs.org/en) и [Npm](https://www.npmjs.com/)
+### Установка:
+1. Для установки понадобятся программы [Git](https://git-scm.com/downloads), [Node.js](https://nodejs.org/en) и [Npm](https://www.npmjs.com/)
 2. При наличии данных программ создайте папку в удобном для Вас месте откройте ее с помощью терминала. 
    Как открыть терминал:
       Windows:
@@ -20,7 +20,7 @@
 
       Linux:
       - нажмите сочетание клавиш Ctrl + Alt + T
-3. Находясь в созданной папке, клонируйте проект себе при помощи команды в терминале: 
+3. Находясь в созданной папке, склонируйте проект при помощи команды в терминале: 
   ```bash
   git clone https://github.com/BaronDeFitenbah/frontend-project-44.git
   ```
