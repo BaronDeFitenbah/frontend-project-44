@@ -5,6 +5,7 @@
 
 ### How it works:
 [Brain even game](https://asciinema.org/a/558120)
+
 [Brain calc game](https://asciinema.org/a/558367)
 [Brain gcd game](https://asciinema.org/a/558368)
 [Brain progression game](https://asciinema.org/a/558377)
