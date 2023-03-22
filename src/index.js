@@ -16,7 +16,11 @@ export const runEngine = (rules, generateRound) => {
   for (let i = 0; i < roundsCount; i ++) {
     //generateRound
     conts [question, answer] = generateRound();
+    console.log(`Question: ${question}`);
+    const gamerAnswer = readlineSync.question('Your answer: ');
+    if (answer === gamerAnswer) {
     
+    }
   }
   
   
