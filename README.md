@@ -3,13 +3,12 @@
 [![Actions Status](https://github.com/BaronDeFitenbah/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/BaronDeFitenbah/frontend-project-44/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ec758f40e83a2e1edd15/maintainability)](https://codeclimate.com/github/BaronDeFitenbah/frontend-project-44/maintainability)
 
-### Описание
-___________
+## Описание
+
 В проекте реализованы 5 игр: проверка на четность, калькулятор, НОД, аримфметическая прогрессия, простое ли число. 
 В каждой игре есть три раунда. Игрок побеждает, если правильно отвечает во всех 3-х раундах.
 
-### Установка:
-________
+## Установка:
 1. Для установки понадобятся программы [Git](https://git-scm.com/downloads), [Node.js](https://nodejs.org/en) и [Npm](https://www.npmjs.com/)
 2. При наличии данных программ создайте папку в удобном для Вас месте откройте ее с помощью терминала. 
    Как открыть терминал:
@@ -40,7 +39,7 @@ ________
   ```
 
 ## Как играть:
-_________
+
 #### 1. Проверка на четность ([Brain Even game](https://asciinema.org/a/558120))
 В этой игре необходимо проверить число на четность: если число четное, введите "yes", если нечетное - "no".  
 Для запуска игры введите в терминале команду **"brain-even"**
